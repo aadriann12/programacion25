@@ -16,7 +16,7 @@ public class Pintura extends Servicio {//grrkgfnkfjnh
     public Pintura(double superficie, double precioPintura, String trabajador, LocalDate fechaInicio, String cliente) {
         super(trabajador, fechaInicio, cliente);
         this.superficie = superficie;
-        this.precioPintura = precioPintura;//Hh
+        this.precioPintura = precioPintura;
     }
 
     public double getSuperficie() {
@@ -55,9 +55,10 @@ public class Pintura extends Servicio {//grrkgfnkfjnh
     }
 
     @Override
-    public String detalleServicio() {//hola
+    public String detalleServicio() {
        return super.toString()+"Pintura{" + "superficie=" + superficie + ", precioPintura=" + precioPintura + '}';
     }
+
 
 
  
