@@ -55,7 +55,7 @@ public class Pintura extends Servicio {
     }
 
     @Override
-    public String detalleServicio() {
+    public String detalleServicio() {//hola
        return super.toString()+"Pintura{" + "superficie=" + superficie + ", precioPintura=" + precioPintura + '}';
     }
 

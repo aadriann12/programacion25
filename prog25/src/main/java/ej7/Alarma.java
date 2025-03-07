@@ -41,4 +41,9 @@ return costeManoObra();
         return super.toString()+"Alarma{" + "numAlarmas=" + numAlarmas + '}';
     }
 
+    @Override
+    public double costeMaterial() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
