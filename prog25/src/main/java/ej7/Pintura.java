@@ -10,7 +10,7 @@ import java.time.LocalDate;
  *
  * @author adria
  */
-public class Pintura extends Servicio {
+public class Pintura extends Servicio {//grrkgfnkfjnh
  protected double superficie, precioPintura;
 
     public Pintura(double superficie, double precioPintura, String trabajador, LocalDate fechaInicio, String cliente) {
