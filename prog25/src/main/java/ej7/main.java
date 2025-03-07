@@ -16,6 +16,7 @@ public class main {
     public static void main(String[] args) {
         int cont=0;
     Servicio[] s1=new Servicio[5];
+//    s1[0] n=new Alarma();
     
     }
     
