@@ -22,9 +22,10 @@ public class main {
         int opcion;
         boolean creado=false;  
         Empresa emp=new Empresa();
+        boolean creado2=false;
         while (!salir) {
             try {
-                main.mostrar();
+                System.out.println( main.mostrar());
                 opcion=Integer.parseInt(teclado.nextLine());
                 if (opcion<=0||opcion>6) {
                     throw new ExcepcionAdri("numero incorrecto");
@@ -33,56 +34,46 @@ public class main {
                 switch (opcion) {
                     case 1:
                       
-                       
-                       
+                        if (creado) {
+                            System.out.println("ya se ha creado una empresa, tiene "+emp.cont +"empleados");
+                        } else {
+                               System.out.println("empresa creada");
                         creado=true;
+                        }
+                    
                         break;
                           case 2:
-                              if (creado) {
-                                  System.out.println("que quieres crear? Empleado por horas(1) o empleado fijo(2)");
-                                  boolean valido2=false;
-                                  int opcion2;
-                                  while (!valido2) {
-                                      opcion2=Integer.parseInt(teclado.nextLine());
-                                      if (opcion2<1||opcion2>2) {
-                                          throw new ExcepcionAdri("numero incorrecto");
-                                      }
-                                      switch (opcion2) {
-                                          case 1:
-//                                              EmpleadoFijo(double salarioMensual, String nombre, String apellidos, String DNI, double salario)
-//                                              System.out.println("Introduce los datos del empleado por horas:");
-//        System.out.print("Nombre: ");
-//        String nombreHoras = teclado.nextLine();
-//        System.out.print("Apellidos: ");
-//        String apellidosHoras = teclado.nextLine();
-//        System.out.print("DNI: ");
-//        String dniHoras = teclado.nextLine();
-//        System.out.print("Horas trabajadas: ");
-//        int horasTrabajadas = teclado.nextInt();
-//        System.out.print("Tarifa por hora: ");
-//        double tarifaPorHora = teclado.nextDouble();
-//        teclado.nextLine(); // Limpiar buffer
-//        emp.agregarEmpleado(new EmpleadoPorHoras(nombreHoras, apellidosHoras, dniHoras, horasTrabajadas, tarifaPorHora));
-//;
-                                              break;
-                                          case 2:
-//                                              System.out.print("Nombre: ");
-//        String nombre = teclado.nextLine();
-//        System.out.print("Apellidos: ");
-//        String apellidos = teclado.nextLine();
-//        System.out.print("DNI: ");
-//        String dni = teclado.nextLine();
-//        System.out.print("Salario Mensual: ");
-//        double salarioMensual = teclado.nextDouble();
-//        emp.agregarEmpleado(new EmpleadoFijo());
-                                              //(int horasTrabajadas, double tarifaPorHora, String nombre, String apellidos, String DNI, double salario) {
-                                              break;
-                                          default:
-                                              throw new AssertionError();
-                                      }
-                                  }
-                                  }
+                             if (creado) {
+                            System.out.println("¿Qué tipo de empleado quieres crear? (1) Por horas, (2) Fijo");
+                            int opcion2 = Integer.parseInt(teclado.nextLine());
+                            if (opcion2 < 1 || opcion2 > 2) {
+                                throw new ExcepcionAdri("Número incorrecto");
+                            }
+                            
+                            System.out.print("Nombre: ");
+                            String nombre = teclado.nextLine();
+                            System.out.print("Apellidos: ");
+                            String apellidos = teclado.nextLine();
+                            System.out.print("DNI: ");
+                            String dni = teclado.nextLine();
+                            
+                            if (opcion2 == 1) {
+                                System.out.print("Horas trabajadas: ");
+                                int horasTrabajadas = Integer.parseInt(teclado.nextLine());
+                                System.out.print("Tarifa por hora: ");
+                                double tarifaPorHora = Double.parseDouble(teclado.nextLine());
+                                emp.agregarEmpleado(new EmpleadoPorHoras(horasTrabajadas, tarifaPorHora, nombre, apellidos, dni, 0));
+                            } else {
+                                System.out.print("Salario mensual: ");
+                                double salarioMensual = Double.parseDouble(teclado.nextLine());
+                                emp.agregarEmpleado(new EmpleadoFijo(salarioMensual, nombre, apellidos, dni, 0));
+                            }
+                            System.out.println("Empleado añadido correctamente.");
+                        } else {
+                            System.out.println("Primero debes instanciar la empresa.");
+                        }
                         break;
+                    
                           case 3:
                               if (creado) {
                                   for (int i = 0; i < emp.e1.length; i++) {
