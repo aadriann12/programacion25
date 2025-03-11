@@ -33,17 +33,20 @@ public class Empresa {
               boolean encontrado=false;
         for (int i = 0; i < e1.length; i++) {
             if (e1[i]!=null&&e1[i].getDNI().equalsIgnoreCase(DNI)) {
-                System.out.println("encontrado, elliminando....");
+           
                 encontrado=true;
                 for (int j = e1.length-1; j >= i; j--) {
                     e1[j]=e1[j-1];
                 }
-                System.out.println("eliminado");
+        
             }
             }
         if (!encontrado) {
            throw new EmpleadoNOEncontrado("no se ha encontrado");
             
+        }else{
+                System.out.println("encontrado, elliminando....");
+                System.out.println("eliminado");
         }
         } catch (EmpleadoNOEncontrado e) {
         }catch (Exception e) {
