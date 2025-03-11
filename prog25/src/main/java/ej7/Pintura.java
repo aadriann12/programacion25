@@ -20,7 +20,7 @@ public class Pintura extends Servicio {//grrkgfnkfjnh
     }
 
     public double getSuperficie() {
-        return superficie;
+        return superficie;//hh
     }
 
     public void setSuperficie(double superficie) {
