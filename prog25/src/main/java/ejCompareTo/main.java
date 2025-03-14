@@ -18,7 +18,7 @@ public class main {
     public static void main(String[] args) {
       Producto[] prod={
           new Producto("cocacola",2),
-          new Producto ("monster",1.80),
+          new Producto ("monster",2),
       new Producto ("ginebra",8.99),
       new Producto ("agua",0.80)
       };

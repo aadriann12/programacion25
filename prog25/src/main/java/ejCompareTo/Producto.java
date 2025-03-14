@@ -19,7 +19,12 @@ protected double precio;
 
     @Override
     public int compareTo(Producto o) {
-       return Double.compare(this.precio, o.precio);
+       int result =Double.compare(o.precio,this.precio);
+        if (result==0) {
+            result=this.nombre.compareTo(o.nombre);
+            
+        }
+        return result;
     }
 
     @Override
